@@ -1,0 +1,15 @@
+.startFromScratch {
+  width: 100%;
+  height: 100vh;
+  padding: 20px 40px;
+  margin: 20px 40px;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+  }
+
+  
+}

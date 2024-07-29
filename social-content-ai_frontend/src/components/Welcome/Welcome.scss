@@ -1,0 +1,13 @@
+.welcome {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 20px;
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 54.56px;
+      padding: 0 10px;
+      margin-top: 15px;
+    }
+  }

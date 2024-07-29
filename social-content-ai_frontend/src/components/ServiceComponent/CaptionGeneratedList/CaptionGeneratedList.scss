@@ -1,0 +1,40 @@
+.captionGeneratedList{
+h2{
+    margin: 20px 0;
+}
+    .captionCard{
+        width: 700px;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        padding: 20px 40px;
+        margin: 20px 0;
+
+        &__action{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 20px;
+            margin-top: 15px;
+
+            &__share{
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                background-color: #c8eeff;
+                padding: 8px;
+                border-radius: 12px;
+                font-weight: 600;
+            }
+
+            &__save{
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                background-color: #f6ff99;
+                padding: 8px;
+                border-radius: 12px;
+                font-weight: 600;
+            }
+        }
+    }
+}

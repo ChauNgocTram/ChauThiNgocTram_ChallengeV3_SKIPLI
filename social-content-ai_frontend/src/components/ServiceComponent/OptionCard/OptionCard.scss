@@ -1,0 +1,35 @@
+.startFromScratch__option {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px 40px;
+  margin: 32px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  &__right {
+    color: #000;
+
+    &:hover {
+      color: #3a8ad0;
+    }
+  }
+}
