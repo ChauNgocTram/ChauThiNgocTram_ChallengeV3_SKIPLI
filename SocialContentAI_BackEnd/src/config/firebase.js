@@ -1,10 +1,12 @@
+require('dotenv').config();
+
 const admin = require("firebase-admin");
 
-const serviceAccount = require("./serviceAccountKey.json");
+const serviceAccount = require(process.env.FIREBASE_SERVICE_ACCOUNT_KEY_PATH);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://challengev3-chauthingoctram-default-rtdb.firebaseio.com"
+  databaseURL: process.env.FIREBASE_DATABASE_URL
 });
 
 const db = admin.database();
