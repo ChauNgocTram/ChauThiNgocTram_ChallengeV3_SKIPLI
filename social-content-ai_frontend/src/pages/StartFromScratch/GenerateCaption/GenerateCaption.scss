@@ -3,6 +3,13 @@
   height: 100vh;
   padding: 40px 80px;
 
+  .back__btn{
+    display: flex;
+    align-items: center;
+    color: #c31515;
+    text-decoration: none;
+  }
+
   h1 {
     margin: 20px 0;
   }

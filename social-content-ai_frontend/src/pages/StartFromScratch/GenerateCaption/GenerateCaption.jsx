@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./GenerateCaption.scss";
 import CaptionGeneratedList from "../../../components/ServiceComponent/CaptionGeneratedList/CaptionGeneratedList";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useGenerateCaptions } from "../../../hooks/useContent";
 import SelectList from "../../../components/SelectList/SelectList";
-
+import { MdArrowBackIos } from "react-icons/md";
 function GenerateCaption() {
   const { socialNetwork } = useParams();
   const [subject, setSubject] = useState("");
@@ -44,6 +44,9 @@ function GenerateCaption() {
 
   return (
     <div className="generateCaption">
+      <NavLink to="/start-from-scratch" className='back__btn'>
+      <MdArrowBackIos />Back
+      </NavLink> 
       <h1>
         {socialNetwork.charAt(0).toUpperCase() + socialNetwork.slice(1)} post
       </h1>
