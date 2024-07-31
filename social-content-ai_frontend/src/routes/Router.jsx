@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import DashboardLayout from "../layouts/DashboardLayout/DashboardLayout";
 import AuthenLayout from "../layouts/AuthenLayout/AuthenLayout";
@@ -12,42 +12,47 @@ import Error404 from "../pages/Error404/Error404";
 import ServiceDashboard from "../pages/ServiceDashboard/ServiceDashboard";
 import Profile from "../pages/Profile/Profile";
 import StartFromScratch from "../pages/StartFromScratch/StartFromScratch";
-import GetInspired from "../pages/GetInspired/GetInspired";
 import GenerateCaption from "../pages/StartFromScratch/GenerateCaption/GenerateCaption";
+import CombinedSteps from "../pages/GetInspired/CombinedSteps";
+
+import PrivateRoute from './PrivateRoute'; 
 
 const appRoutes = [
-    {
-      path: "/auth",
-      element: <AuthenLayout />,
-      children: [
-        { path: "login", element: <Authentication /> },
-        { path: "verify-otp", element: <VerifyOTP /> },       
-      ],
-    },
-    {
-      path: "/",
-      element: <DashboardLayout />,
-      children: [
-        { path: "", element: <ServiceDashboard /> }, 
-        { path: "start-from-scratch", element: <StartFromScratch /> },
-        { path: "start-from-scratch/faceboook-post", element: <GenerateCaption /> },
-        
+  {
+    path: "/auth",
+    element: <AuthenLayout />,
+    children: [
+      { path: "login", element: <Authentication /> },
+      { path: "verify-otp", element: <VerifyOTP /> },
+    ],
+  },
+  {
+    path: "/",
+    element: <PrivateRoute />, 
+    children: [
+      {
+        path: "",
+        element: <DashboardLayout />,
+        children: [
+          { path: "", element: <ServiceDashboard /> },
+          { path: "start-from-scratch", element: <StartFromScratch /> },
+          { path: "generate-caption/:socialNetwork", element: <GenerateCaption /> },
+          { path: "combined-steps", element: <CombinedSteps /> },
+          { path: "profile", element: <Profile /> },
+        ],
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <Error404 />,
+  },
+];
 
-        { path: "get-inspired", element: <GetInspired /> },  
-        
-        
-        { path: "profile", element: <Profile /> },     
-      ],
-    },
-    {
-      path: "*",
-      element: <Error404 />,
-    },
-]
+export const router = createBrowserRouter(appRoutes);
 
-export const router = createBrowserRouter([
-    {
-      element: <Outlet />,
-      children: appRoutes,
-    },
-  ]);
+const App = () => {
+  return <RouterProvider router={router} />;
+};
+
+export default App;

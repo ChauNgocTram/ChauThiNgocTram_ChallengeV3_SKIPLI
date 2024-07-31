@@ -22,7 +22,7 @@ function ServiceDashboard() {
         />
 
         <ServiceCard
-          to="/get-inspired"
+          to="/combined-steps"
           imgSrc={creativity}
           heading="Get inspired"
           description="Generate post ideas and captions for a topic"

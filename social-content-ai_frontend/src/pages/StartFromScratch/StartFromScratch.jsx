@@ -13,31 +13,31 @@ function StartFromScratch() {
 
       <div className="startFromScratch__description">
         <span>
-          Choose the type of post you want a caption for, and let Skipli Al
-          writeit for you
+          Choose the type of post you want a caption for, and let Skipli AI
+          write it for you
         </span>
         <p>What kind of post do you want a caption for?</p>
       </div>
 
       <OptionCard
-        to="/start-from-scratch/faceboook-post"
+        to="/generate-caption/facebook"
         imgSrc={facebook}
         heading="Facebook post"
-        description="Generate caption for a post"
+        description="Generate caption for a Facebook post"
       />
 
       <OptionCard
-        to="/instagram-post"
+        to="/generate-caption/instagram"
         imgSrc={instagram}
         heading="Instagram post"
-        description="Generate caption for a post"
+        description="Generate caption for an Instagram post"
       />
 
       <OptionCard
-        to="/twitter-post"
+        to="/generate-caption/twitter"
         imgSrc={twitter}
         heading="Twitter post"
-        description="Generate caption for a post"
+        description="Generate caption for a Twitter post"
       />
     </div>
   );
